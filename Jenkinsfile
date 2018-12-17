@@ -30,13 +30,15 @@ node {
     
     stage('kubectl deploy'){
         sh 'minikube start'
-        //sh 'kubectl run hi-app1 --image=kartikjalgaonkar/hi-world --port=8082'
+        sh 'kubectl delete deployment hi-app1'
+        sh 'kubectl delete svc hi-app1'
+        sh 'kubectl run hi-app1 --image=kartikjalgaonkar/hi-world --port=8082'
         sleep 60
         sh 'kubectl get pods'
         sh 'kubectl expose deployment hi-app1 --type=NodePort --port=8083 --target-port=8082'
         sh 'kubectl get svc'
         sh 'minikube service hi-app1'
     }
-    
+   
 }
 
