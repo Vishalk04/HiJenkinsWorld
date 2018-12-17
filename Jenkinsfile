@@ -35,4 +35,6 @@ node {
         sh 'sudo kubectl expose deployment my-app --type=NodPort --port=8083 --target-port=8082'
         sh 'sudo kubectl get svc'
     }
+    
 }
+
