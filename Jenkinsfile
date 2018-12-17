@@ -9,9 +9,7 @@ node {
 
     stage('Build image') {
         sh 'mvn clean install'
-        def pom=readMavenPom file:'pom.xml'
-        print pom.version
-        env.version=pom.version
+        
     
         /* This builds the actual image; synonymous to
          * docker build on the command line */
