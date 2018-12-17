@@ -27,4 +27,11 @@ node {
             app.push("latest")
         }
     }
+    
+    stage('kubectl deploy'){
+        sh 'kubectl run my-app --image=kartikjalgaonkar/hi-world --port=8082'
+        sh 'kubectl get pods'
+        sh 'kubectl expose deployment my-app --type=NodPort --port=8083 --target-port=8082'
+        sh 'kubectl get svc'
+    }
 }
