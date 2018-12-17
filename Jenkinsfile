@@ -29,7 +29,7 @@ node {
     }
     
     stage('kubectl deploy'){
-        sh 'sudo minkube start'
+        sh 'minkube start'
         sh 'sudo kubectl run my-app --image=kartikjalgaonkar/hi-world --port=8082'
         sh 'sudo kubectl get pods'
         sh 'sudo kubectl expose deployment my-app --type=NodPort --port=8083 --target-port=8082'
