@@ -30,10 +30,10 @@ node {
     
     stage('kubectl deploy'){
         sh 'minikube start'
-        sh 'sudo kubectl run my-app --image=kartikjalgaonkar/hi-world --port=8082'
-        sh 'sudo kubectl get pods'
-        sh 'sudo kubectl expose deployment my-app --type=NodPort --port=8083 --target-port=8082'
-        sh 'sudo kubectl get svc'
+        sh 'kubectl run my-app --image=kartikjalgaonkar/hi-world --port=8082'
+        sh 'kubectl get pods'
+        sh 'kubectl expose deployment my-app --type=NodPort --port=8083 --target-port=8082'
+        sh 'kubectl get svc'
     }
     
 }
