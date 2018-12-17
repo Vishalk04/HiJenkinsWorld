@@ -32,7 +32,7 @@ node {
         sh 'minikube start'
         sh 'kubectl run my-app --image=kartikjalgaonkar/hi-world --port=8082'
         sh 'kubectl get pods'
-        sh 'kubectl expose deployment my-app --type=NodPort --port=8083 --target-port=8082'
+        sh 'kubectl expose deployment my-app --type=NodePort --port=8083 --target-port=8082'
         sh 'kubectl get svc'
     }
     
