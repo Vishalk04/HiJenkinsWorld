@@ -31,9 +31,9 @@ node {
     stage('kubectl deploy'){
         sh 'minikube start'
         sh 'kubectl run hi-app --image=kartikjalgaonkar/hi-world --port=8082'
-        sleep 30s
+        sleep 300
         sh 'kubectl get pods'
-        sleep 30s
+        sleep 300
         sh 'kubectl expose deployment hi-app --type=NodePort --port=8083 --target-port=8082'
         sh 'kubectl get svc'
     }
