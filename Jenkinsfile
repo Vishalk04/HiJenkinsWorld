@@ -33,7 +33,7 @@ node {
         sh 'kubectl delete deployment hi-app1'
         sh 'kubectl delete svc hi-app1'
         sh 'kubectl run hi-app1 --image=kartikjalgaonkar/hi-world --port=8082'
-        sleep 60
+        sleep 200
         sh 'kubectl get pods'
         sh 'kubectl expose deployment hi-app1 --type=NodePort --port=8083 --target-port=8082'
         sh 'kubectl get svc'
