@@ -37,6 +37,7 @@ node {
         sh 'kubectl get pods'
         sh 'kubectl expose deployment hi-app1 --type=NodePort --port=8083 --target-port=8082'
         sh 'kubectl get svc'
+        sh 'minikube dashboard'
         sh 'minikube service hi-app1'
     }
    
