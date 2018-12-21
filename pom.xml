@@ -16,7 +16,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<start-class>org.yashtech.config</start-class>
+		<--<start-class>org.yashtech.config</start-class> -->
 	</properties>
 
 	<dependencies>
